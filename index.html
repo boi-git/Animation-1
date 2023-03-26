@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container" id="container_id">
+
+        
+            <p class="text2" id="text2id">Lorem ipsum dolor sit amet.</p>
+  
+            <img class = "logo-img" id="ani1" src="img/logo.png" alt="">
+            <img class = "bottle-img" id="ani2" src="img/bottle.png" alt="">
+
+
+
+                        <p class="text1" id="ani1">Lorem ipsum dolor sit amet.</p>
+
+   
+    
+        
+    
+        <input class ="btn" id="ani2" type="button" 
+        value="Copy Here"> 
+
+
+    </div>
+
+    <script src="myScript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+
+    <script>
+
+        const tl = gsap.timeline({default:{duration :0.5}})
+        tl.to('.text1',{opacity:1})
+      
+        tl.to('#ani1',{display:"none"})
+        tl.set('.container',{backgroundImage:'url(img/bg2.png)',y:-10})
+        tl.to('.bottle-img',{display:"inline",y:-50})
+        tl.to('.text2',{display:"inline",position:"absoulte",y:-30})
+        tl.to('.btn',{display:"inline",y:-10})
+ 
+        setTimeout(changetext,3500)
+        //  tl.set('.bottle-img',{rotation:10,})
+         tl.fromTo('.text2',{opacity:0},{opacity:1})
+       tl.to(".bottle-img",{rotation:-10,yoyo:true,repeat:5,ease: Power2.easeInOut})
+       tl.set('.bottle-img',{rotation:0})
+
+
+
+
+
+  
+
+    </script>
+    
+</body>
+</html>
